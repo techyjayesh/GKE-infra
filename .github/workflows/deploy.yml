@@ -22,6 +22,7 @@ jobs:
 
     - name: Get GKE credentials
       run: |
+        export USE_GKE_GCLOUD_AUTH_PLUGIN=False
         gcloud container clusters get-credentials ${{ secrets.GKE_CLUSTER }} \
           --zone ${{ secrets.GKE_ZONE }} \
           --project ${{ secrets.GKE_PROJECT }}
@@ -59,6 +60,7 @@ jobs:
 
     - name: Deploy to GKE using Helm
       run: |
+        export USE_GKE_GCLOUD_AUTH_PLUGIN=False
         helm upgrade --install myapp ./helm/myapp \
           --namespace default \
           --create-namespace \
