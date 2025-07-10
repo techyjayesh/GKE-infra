@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/techyjayesh/gke-infra
+  repository: devopsloop/gke
   tag: latest
   pullPolicy: IfNotPresent
 
