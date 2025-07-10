@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        image: "ghcr.io/techyjayesh/gke-infra:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: {{ .Values.containerPort }}
